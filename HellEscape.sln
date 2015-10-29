@@ -1,0 +1,99 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HellEscape", "HellEscape\HellEscape.vcxproj", "{D52661B9-1E5E-475A-BC1D-A562ADD8FB4D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{C2A9139D-8E0C-4CA7-9D31-EDEC6F38CC7B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3rdParty", "3rdParty", "{A4ACE1B9-2290-4378-9495-64E48456D9EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BulletPhysics", "BulletPhysics", "{3396874F-2066-44E7-BEC2-4AD8A661B628}"
+	ProjectSection(SolutionItems) = preProject
+		Libraries\3rdParty\BulletPhysics\btBulletCollisionCommon.h = Libraries\3rdParty\BulletPhysics\btBulletCollisionCommon.h
+		Libraries\3rdParty\BulletPhysics\btBulletDynamicsCommon.h = Libraries\3rdParty\BulletPhysics\btBulletDynamicsCommon.h
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BulletCollision", "Libraries\3rdParty\BulletPhysics\BulletCollision\BulletCollision.vcxproj", "{641E99B5-F6E1-4C18-97E7-2C5984FADCD5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BulletDynamics", "Libraries\3rdParty\BulletPhysics\BulletDynamics\BulletDynamics.vcxproj", "{0811D84E-AC33-413D-848C-E02033C18EC0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BulletFileLoader", "Libraries\3rdParty\BulletPhysics\BulletFileLoader\BulletFileLoader.vcxproj", "{4A02811E-6AD5-40D2-97AA-741D569F6A72}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BulletWorldImporter", "Libraries\3rdParty\BulletPhysics\BulletWorldImporter\BulletWorldImporter.vcxproj", "{76E99ECD-28FA-4584-8F0D-986D62349E19}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BulletXmlWorldImporter", "Libraries\3rdParty\BulletPhysics\BulletXmlWorldImporter\BulletXmlWorldImporter.vcxproj", "{72A41E8C-C000-4DA5-B121-B289898B551E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConvexDecomposition", "Libraries\3rdParty\BulletPhysics\ConvexDecomposition\ConvexDecomposition.vcxproj", "{F4215144-2C26-4CEB-89D4-24EAAB4B48E0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GIMPACTUtils", "Libraries\3rdParty\BulletPhysics\GIMPACTUtils\GIMPACTUtils.vcxproj", "{3A43DEA3-2DAF-432A-B86C-F6F902ED77B8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HACD", "Libraries\3rdParty\BulletPhysics\HACD\HACD.vcxproj", "{9401F8EB-9397-49F4-A210-E209769955F8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinearMath", "Libraries\3rdParty\BulletPhysics\LinearMath\LinearMath.vcxproj", "{5D82024C-7F07-43D6-9847-004BB94E0398}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D52661B9-1E5E-475A-BC1D-A562ADD8FB4D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D52661B9-1E5E-475A-BC1D-A562ADD8FB4D}.Debug|Win32.Build.0 = Debug|Win32
+		{D52661B9-1E5E-475A-BC1D-A562ADD8FB4D}.Release|Win32.ActiveCfg = Release|Win32
+		{D52661B9-1E5E-475A-BC1D-A562ADD8FB4D}.Release|Win32.Build.0 = Release|Win32
+		{641E99B5-F6E1-4C18-97E7-2C5984FADCD5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{641E99B5-F6E1-4C18-97E7-2C5984FADCD5}.Debug|Win32.Build.0 = Debug|Win32
+		{641E99B5-F6E1-4C18-97E7-2C5984FADCD5}.Release|Win32.ActiveCfg = Release|Win32
+		{641E99B5-F6E1-4C18-97E7-2C5984FADCD5}.Release|Win32.Build.0 = Release|Win32
+		{0811D84E-AC33-413D-848C-E02033C18EC0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0811D84E-AC33-413D-848C-E02033C18EC0}.Debug|Win32.Build.0 = Debug|Win32
+		{0811D84E-AC33-413D-848C-E02033C18EC0}.Release|Win32.ActiveCfg = Release|Win32
+		{0811D84E-AC33-413D-848C-E02033C18EC0}.Release|Win32.Build.0 = Release|Win32
+		{4A02811E-6AD5-40D2-97AA-741D569F6A72}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4A02811E-6AD5-40D2-97AA-741D569F6A72}.Debug|Win32.Build.0 = Debug|Win32
+		{4A02811E-6AD5-40D2-97AA-741D569F6A72}.Release|Win32.ActiveCfg = Release|Win32
+		{4A02811E-6AD5-40D2-97AA-741D569F6A72}.Release|Win32.Build.0 = Release|Win32
+		{76E99ECD-28FA-4584-8F0D-986D62349E19}.Debug|Win32.ActiveCfg = Debug|Win32
+		{76E99ECD-28FA-4584-8F0D-986D62349E19}.Debug|Win32.Build.0 = Debug|Win32
+		{76E99ECD-28FA-4584-8F0D-986D62349E19}.Release|Win32.ActiveCfg = Release|Win32
+		{76E99ECD-28FA-4584-8F0D-986D62349E19}.Release|Win32.Build.0 = Release|Win32
+		{72A41E8C-C000-4DA5-B121-B289898B551E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{72A41E8C-C000-4DA5-B121-B289898B551E}.Debug|Win32.Build.0 = Debug|Win32
+		{72A41E8C-C000-4DA5-B121-B289898B551E}.Release|Win32.ActiveCfg = Release|Win32
+		{72A41E8C-C000-4DA5-B121-B289898B551E}.Release|Win32.Build.0 = Release|Win32
+		{F4215144-2C26-4CEB-89D4-24EAAB4B48E0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F4215144-2C26-4CEB-89D4-24EAAB4B48E0}.Debug|Win32.Build.0 = Debug|Win32
+		{F4215144-2C26-4CEB-89D4-24EAAB4B48E0}.Release|Win32.ActiveCfg = Release|Win32
+		{F4215144-2C26-4CEB-89D4-24EAAB4B48E0}.Release|Win32.Build.0 = Release|Win32
+		{3A43DEA3-2DAF-432A-B86C-F6F902ED77B8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3A43DEA3-2DAF-432A-B86C-F6F902ED77B8}.Debug|Win32.Build.0 = Debug|Win32
+		{3A43DEA3-2DAF-432A-B86C-F6F902ED77B8}.Release|Win32.ActiveCfg = Release|Win32
+		{3A43DEA3-2DAF-432A-B86C-F6F902ED77B8}.Release|Win32.Build.0 = Release|Win32
+		{9401F8EB-9397-49F4-A210-E209769955F8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9401F8EB-9397-49F4-A210-E209769955F8}.Debug|Win32.Build.0 = Debug|Win32
+		{9401F8EB-9397-49F4-A210-E209769955F8}.Release|Win32.ActiveCfg = Release|Win32
+		{9401F8EB-9397-49F4-A210-E209769955F8}.Release|Win32.Build.0 = Release|Win32
+		{5D82024C-7F07-43D6-9847-004BB94E0398}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5D82024C-7F07-43D6-9847-004BB94E0398}.Debug|Win32.Build.0 = Debug|Win32
+		{5D82024C-7F07-43D6-9847-004BB94E0398}.Release|Win32.ActiveCfg = Release|Win32
+		{5D82024C-7F07-43D6-9847-004BB94E0398}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A4ACE1B9-2290-4378-9495-64E48456D9EB} = {C2A9139D-8E0C-4CA7-9D31-EDEC6F38CC7B}
+		{3396874F-2066-44E7-BEC2-4AD8A661B628} = {A4ACE1B9-2290-4378-9495-64E48456D9EB}
+		{641E99B5-F6E1-4C18-97E7-2C5984FADCD5} = {3396874F-2066-44E7-BEC2-4AD8A661B628}
+		{0811D84E-AC33-413D-848C-E02033C18EC0} = {3396874F-2066-44E7-BEC2-4AD8A661B628}
+		{4A02811E-6AD5-40D2-97AA-741D569F6A72} = {3396874F-2066-44E7-BEC2-4AD8A661B628}
+		{76E99ECD-28FA-4584-8F0D-986D62349E19} = {3396874F-2066-44E7-BEC2-4AD8A661B628}
+		{72A41E8C-C000-4DA5-B121-B289898B551E} = {3396874F-2066-44E7-BEC2-4AD8A661B628}
+		{F4215144-2C26-4CEB-89D4-24EAAB4B48E0} = {3396874F-2066-44E7-BEC2-4AD8A661B628}
+		{3A43DEA3-2DAF-432A-B86C-F6F902ED77B8} = {3396874F-2066-44E7-BEC2-4AD8A661B628}
+		{9401F8EB-9397-49F4-A210-E209769955F8} = {3396874F-2066-44E7-BEC2-4AD8A661B628}
+		{5D82024C-7F07-43D6-9847-004BB94E0398} = {3396874F-2066-44E7-BEC2-4AD8A661B628}
+	EndGlobalSection
+EndGlobal

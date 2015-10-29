@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="bestfit.cpp" />
+    <ClCompile Include="bestfitobb.cpp" />
+    <ClCompile Include="cd_hull.cpp" />
+    <ClCompile Include="cd_wavefront.cpp" />
+    <ClCompile Include="concavity.cpp" />
+    <ClCompile Include="ConvexBuilder.cpp" />
+    <ClCompile Include="ConvexDecomposition.cpp" />
+    <ClCompile Include="fitsphere.cpp" />
+    <ClCompile Include="float_math.cpp" />
+    <ClCompile Include="meshvolume.cpp" />
+    <ClCompile Include="planetri.cpp" />
+    <ClCompile Include="raytri.cpp" />
+    <ClCompile Include="splitplane.cpp" />
+    <ClCompile Include="vlookup.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bestfit.h" />
+    <ClInclude Include="bestfitobb.h" />
+    <ClInclude Include="cd_hull.h" />
+    <ClInclude Include="cd_vector.h" />
+    <ClInclude Include="cd_wavefront.h" />
+    <ClInclude Include="concavity.h" />
+    <ClInclude Include="ConvexBuilder.h" />
+    <ClInclude Include="ConvexDecomposition.h" />
+    <ClInclude Include="fitsphere.h" />
+    <ClInclude Include="float_math.h" />
+    <ClInclude Include="meshvolume.h" />
+    <ClInclude Include="planetri.h" />
+    <ClInclude Include="raytri.h" />
+    <ClInclude Include="splitplane.h" />
+    <ClInclude Include="vlookup.h" />
+  </ItemGroup>
+</Project>

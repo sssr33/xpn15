@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="bChunk.cpp" />
+    <ClCompile Include="bDNA.cpp" />
+    <ClCompile Include="bFile.cpp" />
+    <ClCompile Include="btBulletFile.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bChunk.h" />
+    <ClInclude Include="bCommon.h" />
+    <ClInclude Include="bDefines.h" />
+    <ClInclude Include="bDNA.h" />
+    <ClInclude Include="bFile.h" />
+    <ClInclude Include="btBulletFile.h" />
+  </ItemGroup>
+</Project>

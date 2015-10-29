@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="hacdCircularList.h" />
+    <ClInclude Include="hacdGraph.h" />
+    <ClInclude Include="hacdHACD.h" />
+    <ClInclude Include="hacdICHull.h" />
+    <ClInclude Include="hacdManifoldMesh.h" />
+    <ClInclude Include="hacdVector.h" />
+    <ClInclude Include="hacdVersion.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="hacdCircularList.inl" />
+    <None Include="hacdVector.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="hacdGraph.cpp" />
+    <ClCompile Include="hacdHACD.cpp" />
+    <ClCompile Include="hacdICHull.cpp" />
+    <ClCompile Include="hacdManifoldMesh.cpp" />
+  </ItemGroup>
+</Project>
