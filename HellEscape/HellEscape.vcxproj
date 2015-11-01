@@ -41,13 +41,17 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)\!VS_TMP\Build\$(PlatformToolset)\$(Configuration)\$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)\!VS_TMP\Intermediate\$(PlatformToolset)\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)!VS_TMP\Build\$(PlatformToolset)\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)!VS_TMP\Intermediate\$(PlatformToolset)\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+    <IncludePath>$(SolutionDir)Libraries\3rdParty\;$(SolutionDir)Libraries\prebuilt\include\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Libraries\prebuilt\lib\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)\!VS_TMP\Build\$(PlatformToolset)\$(Configuration)\$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)\!VS_TMP\Intermediate\$(PlatformToolset)\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)!VS_TMP\Build\$(PlatformToolset)\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)!VS_TMP\Intermediate\$(PlatformToolset)\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+    <IncludePath>$(SolutionDir)Libraries\3rdParty\;$(SolutionDir)Libraries\prebuilt\include\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Libraries\prebuilt\lib\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -59,7 +63,11 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>OgreMain.lib;OgreMeshLodGenerator.lib;OgreOverlay.lib;OgrePaging.lib;OgreProperty.lib;OgreRTShaderSystem.lib;OgreTerrain.lib;OgreVolume.lib;RenderSystem_Direct3D11.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>xcopy "$(SolutionDir)Libraries\prebuilt\dll\*.dll" "$(OutDir)"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -75,7 +83,11 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>OgreMain.lib;OgreMeshLodGenerator.lib;OgreOverlay.lib;OgrePaging.lib;OgreProperty.lib;OgreRTShaderSystem.lib;OgreTerrain.lib;OgreVolume.lib;RenderSystem_Direct3D11.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>xcopy "$(SolutionDir)Libraries\prebuilt\dll\*.dll" "$(OutDir)"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -99,6 +111,35 @@
   <ItemGroup>
     <Image Include="HellEscape.ico" />
     <Image Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Libraries\3rdParty\BulletPhysics\BulletCollision\BulletCollision.vcxproj">
+      <Project>{641e99b5-f6e1-4c18-97e7-2c5984fadcd5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\3rdParty\BulletPhysics\BulletDynamics\BulletDynamics.vcxproj">
+      <Project>{0811d84e-ac33-413d-848c-e02033c18ec0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\3rdParty\BulletPhysics\BulletFileLoader\BulletFileLoader.vcxproj">
+      <Project>{4a02811e-6ad5-40d2-97aa-741d569f6a72}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\3rdParty\BulletPhysics\BulletWorldImporter\BulletWorldImporter.vcxproj">
+      <Project>{76e99ecd-28fa-4584-8f0d-986d62349e19}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\3rdParty\BulletPhysics\BulletXmlWorldImporter\BulletXmlWorldImporter.vcxproj">
+      <Project>{72a41e8c-c000-4da5-b121-b289898b551e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\3rdParty\BulletPhysics\ConvexDecomposition\ConvexDecomposition.vcxproj">
+      <Project>{f4215144-2c26-4ceb-89d4-24eaab4b48e0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\3rdParty\BulletPhysics\GIMPACTUtils\GIMPACTUtils.vcxproj">
+      <Project>{3a43dea3-2daf-432a-b86c-f6f902ed77b8}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\3rdParty\BulletPhysics\HACD\HACD.vcxproj">
+      <Project>{9401f8eb-9397-49f4-a210-e209769955f8}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\3rdParty\BulletPhysics\LinearMath\LinearMath.vcxproj">
+      <Project>{5d82024c-7f07-43d6-9847-004bb94e0398}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
