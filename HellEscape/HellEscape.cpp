@@ -4,6 +4,11 @@
 #include "stdafx.h"
 #include "HellEscape.h"
 
+#include <OGRE\OgreRoot.h>
+#include <OGRE\OgreResourceManager.h>
+#include <OGRE\OgreFileSystemLayer.h>
+#include <OGRE\Overlay\OgreOverlaySystem.h>
+
 #define MAX_LOADSTRING 100
 
 // Global Variables:
@@ -16,6 +21,7 @@ ATOM				MyRegisterClass(HINSTANCE hInstance);
 BOOL				InitInstance(HINSTANCE, int);
 LRESULT CALLBACK	WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK	About(HWND, UINT, WPARAM, LPARAM);
+void OgreTest();
 
 int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
                      _In_opt_ HINSTANCE hPrevInstance,
@@ -41,6 +47,8 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 	}
 
 	hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_HELLESCAPE));
+
+	OgreTest();
 
 	// Main message loop:
 	while (GetMessage(&msg, NULL, 0, 0))
@@ -179,4 +187,20 @@ INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 		break;
 	}
 	return (INT_PTR)FALSE;
+}
+
+void OgreTest() {
+	Ogre::Root* mRoot;
+	Ogre::FileSystemLayer* mFSLayer;
+	Ogre::OverlaySystem* mOverlaySystem;
+	Ogre::String pluginsPath = Ogre::BLANKSTRING;
+
+	mFSLayer = OGRE_NEW_T(Ogre::FileSystemLayer, Ogre::MEMCATEGORY_GENERAL)(OGRE_VERSION_NAME);
+
+	pluginsPath = mFSLayer->getConfigFilePath("plugins.cfg");
+
+	mRoot = OGRE_NEW Ogre::Root(pluginsPath, mFSLayer->getWritablePath("ogre.cfg"),
+		mFSLayer->getWritablePath("ogre.log"));
+
+	mOverlaySystem = OGRE_NEW Ogre::OverlaySystem();
 }

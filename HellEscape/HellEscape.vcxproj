@@ -43,15 +43,15 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)!VS_TMP\Build\$(PlatformToolset)\$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)!VS_TMP\Intermediate\$(PlatformToolset)\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
-    <IncludePath>$(SolutionDir)Libraries\3rdParty\;$(SolutionDir)Libraries\prebuilt\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)Libraries\prebuilt\lib\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)Libraries\3rdParty\;$(SolutionDir)Libraries\prebuilt\include\OGRE\;$(SolutionDir)Libraries\prebuilt\include\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Libraries\prebuilt\lib\$(Configuration)Conf\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)!VS_TMP\Build\$(PlatformToolset)\$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)!VS_TMP\Intermediate\$(PlatformToolset)\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
-    <IncludePath>$(SolutionDir)Libraries\3rdParty\;$(SolutionDir)Libraries\prebuilt\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)Libraries\prebuilt\lib\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)Libraries\3rdParty\;$(SolutionDir)Libraries\prebuilt\include\OGRE\;$(SolutionDir)Libraries\prebuilt\include\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Libraries\prebuilt\lib\$(Configuration)Conf\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -63,10 +63,10 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>OgreMain.lib;OgreMeshLodGenerator.lib;OgreOverlay.lib;OgrePaging.lib;OgreProperty.lib;OgreRTShaderSystem.lib;OgreTerrain.lib;OgreVolume.lib;RenderSystem_Direct3D11.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>OgreMain_d.lib;OgreMeshLodGenerator_d.lib;OgreOverlay_d.lib;OgrePaging_d.lib;OgreProperty_d.lib;OgreRTShaderSystem_d.lib;OgreTerrain_d.lib;OgreVolume_d.lib;RenderSystem_Direct3D11_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>xcopy "$(SolutionDir)Libraries\prebuilt\dll\*.dll" "$(OutDir)"</Command>
+      <Command>xcopy "$(SolutionDir)Libraries\prebuilt\dll\$(Configuration)Conf\*.dll" "$(OutDir)" /Y</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -86,7 +86,7 @@
       <AdditionalDependencies>OgreMain.lib;OgreMeshLodGenerator.lib;OgreOverlay.lib;OgrePaging.lib;OgreProperty.lib;OgreRTShaderSystem.lib;OgreTerrain.lib;OgreVolume.lib;RenderSystem_Direct3D11.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>xcopy "$(SolutionDir)Libraries\prebuilt\dll\*.dll" "$(OutDir)"</Command>
+      <Command>xcopy "$(SolutionDir)Libraries\prebuilt\dll\$(Configuration)Conf\*.dll" "$(OutDir)" /Y</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -140,6 +140,12 @@
     <ProjectReference Include="..\Libraries\3rdParty\BulletPhysics\LinearMath\LinearMath.vcxproj">
       <Project>{5d82024c-7f07-43d6-9847-004bb94e0398}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="plugins.cfg">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</DeploymentContent>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
