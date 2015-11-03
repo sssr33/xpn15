@@ -66,7 +66,8 @@
       <AdditionalDependencies>OgreMain_d.lib;OgreMeshLodGenerator_d.lib;OgreOverlay_d.lib;OgrePaging_d.lib;OgreProperty_d.lib;OgreRTShaderSystem_d.lib;OgreTerrain_d.lib;OgreVolume_d.lib;RenderSystem_Direct3D11_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>xcopy "$(SolutionDir)Libraries\prebuilt\bin\$(Configuration)\*.dll" "$(OutDir)" /Y</Command>
+      <Command>xcopy "$(SolutionDir)Libraries\prebuilt\bin\$(Configuration)\*.dll" "$(OutDir)" /Y
+xcopy "$(SolutionDir)Libraries\prebuilt\bin\$(Configuration)\*.cfg" "$(OutDir)" /Y</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -86,7 +87,8 @@
       <AdditionalDependencies>OgreMain.lib;OgreMeshLodGenerator.lib;OgreOverlay.lib;OgrePaging.lib;OgreProperty.lib;OgreRTShaderSystem.lib;OgreTerrain.lib;OgreVolume.lib;RenderSystem_Direct3D11.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>xcopy "$(SolutionDir)Libraries\prebuilt\bin\$(Configuration)\*.dll" "$(OutDir)" /Y</Command>
+      <Command>xcopy "$(SolutionDir)Libraries\prebuilt\bin\$(Configuration)\*.dll" "$(OutDir)" /Y
+xcopy "$(SolutionDir)Libraries\prebuilt\bin\$(Configuration)\*.cfg" "$(OutDir)" /Y</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "HellEscape.h"
 
+#include <string>
 #include <OGRE\OgreRoot.h>
 #include <OGRE\OgreResourceManager.h>
 #include <OGRE\OgreFileSystemLayer.h>
@@ -189,6 +190,13 @@ INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 	return (INT_PTR)FALSE;
 }
 
+Ogre::String ExePath() {
+    char buffer[MAX_PATH];
+    GetModuleFileNameA( NULL, buffer, MAX_PATH );
+	std::string::size_type pos = std::string(buffer).find_last_of("\\/");
+	return std::string(buffer).substr(0, pos);
+}
+
 void OgreTest() {
 	Ogre::Root* mRoot;
 	Ogre::FileSystemLayer* mFSLayer;
@@ -196,6 +204,8 @@ void OgreTest() {
 	Ogre::String pluginsPath = Ogre::BLANKSTRING;
 
 	mFSLayer = OGRE_NEW_T(Ogre::FileSystemLayer, Ogre::MEMCATEGORY_GENERAL)(OGRE_VERSION_NAME);
+
+	mFSLayer->setHomePath(ExePath());
 
 	pluginsPath = mFSLayer->getConfigFilePath("plugins.cfg");
 
